@@ -31,7 +31,7 @@ public class PresentationController {
     private Label presentationTeamLabel;
 
     @FXML
-    public void sendTeamsForPresentation(Team blueTeam, Team redTeam) {
+    public void startPresentation(Team blueTeam, Team redTeam) {
         this.blueTeam = blueTeam;
         this.redTeam = redTeam;
 
@@ -52,17 +52,33 @@ public class PresentationController {
         @Override
         public void run() {
 
-            Platform.runLater(() -> {
+            for (int i = 0; i < 5; i++) {
                 try {
-                    Thread.sleep(5000);
-                    presentationImageView.setImage(new Image(blueTeam.getTeam().get(0).getUrl()));
-                    presentationPlayerLabel.setText(blueTeam.getTeam().get(0).getName());
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    throw new RuntimeException();
                 }
-            });
+                int finalI1 = i;
+                Platform.runLater(() -> {
+                    presentationTeamLabel.setText("Blue team");
+                    presentationImageView.setImage(new Image(blueTeam.getTeam().get(finalI1).getUrl()));
+                    presentationPlayerLabel.setText(blueTeam.getTeam().get(finalI1).getName());
+                });
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException();
+                }
+                int finalI = i;
+                Platform.runLater(() -> {
+                    presentationTeamLabel.setText("Red team");
+                    presentationImageView.setImage(new Image(redTeam.getTeam().get(finalI).getUrl()));
+                    presentationPlayerLabel.setText(redTeam.getTeam().get(finalI).getName());
+                });
 
+            }
         }
+
     }
 
 }

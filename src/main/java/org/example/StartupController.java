@@ -3,7 +3,6 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -67,7 +66,7 @@ public class StartupController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("presentation.fxml"));
             Parent root = loader.load();
             PresentationController presentationController = loader.getController();
-            presentationController.sendTeamsForPresentation(blueTeam, redTeam);
+            presentationController.startPresentation(blueTeam, redTeam);
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));

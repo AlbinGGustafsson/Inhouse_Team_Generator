@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane fx:id="presentationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PresentationController">
    <children>
-      <ImageView fx:id="presentationImageView" fitHeight="500.0" fitWidth="500.0" layoutX="199.0" layoutY="91.0" onMouseEntered="#startPresentation" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="presentationImageView" fitHeight="500.0" fitWidth="500.0" layoutX="199.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/NoPlayer.png" />
          </image>

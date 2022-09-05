@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
@@ -43,6 +42,7 @@ public class PresentationController {
 
         System.out.println("Presentation starting");
         presentationImageView.setImage(new Image(blueTeam.getTeam().get(0).getUrl()));
+        presentationPlayerLabel.setText(blueTeam.getTeam().get(0).getName());
 
     }
 

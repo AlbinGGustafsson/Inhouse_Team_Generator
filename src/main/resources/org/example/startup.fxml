@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane fx:id="startupPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.StartupController">
    <children>
       <Button fx:id="createTeamsButton" layoutX="209.0" layoutY="432.0" mnemonicParsing="false" onAction="#createTeams" prefHeight="57.0" prefWidth="132.0" text="Create teams" />
@@ -16,14 +15,14 @@
             <Font size="33.0" />
          </font>
       </Label>
-      <TextField fx:id="skillDiffInput" layoutX="425.0" layoutY="441.0" prefHeight="40.0" prefWidth="46.0" text="0" />
+      <TextField fx:id="skillDiffInput" layoutX="425.0" layoutY="441.0" prefHeight="40.0" prefWidth="46.0" text="2" />
       <Label layoutX="362.0" layoutY="489.0" text="Max skill difference">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
       <ComboBox fx:id="comboBox1" layoutX="59.0" layoutY="112.0" prefHeight="40.0" prefWidth="166.0" promptText="Player" />
-      <Button fx:id="loadPlayersButton" layoutX="419.0" layoutY="28.0" mnemonicParsing="false" onAction="#loadPlayers" prefHeight="40.0" prefWidth="104.0" text="Load players" />
+      <Button fx:id="loadPlayersButton" layoutX="39.0" layoutY="441.0" mnemonicParsing="false" onAction="#loadPlayers" prefHeight="40.0" prefWidth="127.0" text="Reload players" />
       <ComboBox fx:id="comboBox2" layoutX="59.0" layoutY="166.0" prefHeight="40.0" prefWidth="166.0" promptText="Player" />
       <ComboBox fx:id="comboBox3" layoutX="59.0" layoutY="220.0" prefHeight="40.0" prefWidth="166.0" promptText="Player" />
       <ComboBox fx:id="comboBox4" layoutX="59.0" layoutY="275.0" prefHeight="40.0" prefWidth="166.0" promptText="Player" />

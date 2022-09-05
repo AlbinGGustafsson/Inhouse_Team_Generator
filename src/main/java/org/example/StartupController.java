@@ -41,7 +41,9 @@ public class StartupController {
     private Scene scene;
     private Parent root;
 
-    public StartupController() {
+    @FXML
+    public void initialize() {
+        loadPlayers();
     }
 
     @FXML
@@ -75,7 +77,6 @@ public class StartupController {
 //            App.setRoot("presentation");
 //            App.stage.sizeToScene();
 
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,6 +85,10 @@ public class StartupController {
 
     @FXML
     void loadPlayers(ActionEvent event) {
+        loadPlayers();
+    }
+
+    private void loadPlayers() {
         playerLoader.loadPlayers();
 
         comboBox1.setItems(playerLoader.getObsListPlayers());

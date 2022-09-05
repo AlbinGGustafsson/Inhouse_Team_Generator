@@ -3,8 +3,12 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,36 +37,48 @@ public class StartupController {
     @FXML
     private Label title;
 
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
     public StartupController() {
     }
 
     @FXML
-    void createTeams(ActionEvent event) throws IOException {
+    void createTeams(ActionEvent event) {
 
-        playersInInHouse.clear();
-        createPlayersFromChoices();
+        try {
+            playersInInHouse.clear();
+            createPlayersFromChoices();
 
-        int maxSkillDiff = Integer.parseInt(skillDiffInput.getText());
+            int maxSkillDiff = Integer.parseInt(skillDiffInput.getText());
 
-        Shuffler shuffler = new Shuffler(playersInInHouse);
-        shuffler.skillScramble(maxSkillDiff);
+            Shuffler shuffler = new Shuffler(playersInInHouse);
+            shuffler.skillScramble(maxSkillDiff);
 
-        Team blueTeam = shuffler.getBlueTeam();
-        Team redTeam = shuffler.getRedTeam();
+            Team blueTeam = shuffler.getBlueTeam();
+            Team redTeam = shuffler.getRedTeam();
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, blueTeam.toString() + "\n" + redTeam.toString());
-        alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, blueTeam.toString() + "\n" + redTeam.toString());
+            alert.showAndWait();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("presentation.fxml"));
+            Parent root = loader.load();
+            PresentationController presentationController = loader.getController();
+            presentationController.sendTeamsForPresentation(blueTeam, redTeam);
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Presentation");
+            stage.show();
+
+//            App.setRoot("presentation");
+//            App.stage.sizeToScene();
 
 
-//        PresentationController presentationController = new PresentationController();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("presentation.fxml"));
-        loader.load();
-        PresentationController presentationController = loader.getController();
-        presentationController.sendTeamsForPresentation(blueTeam, redTeam);
-
-
-        App.setRoot("presentation");
-        App.stage.sizeToScene();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

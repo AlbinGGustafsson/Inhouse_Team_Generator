@@ -30,6 +30,7 @@ public class PresentationController {
     @FXML
     private Label presentationTeamLabel;
 
+    @FXML
     public void sendTeamsForPresentation(Team blueTeam, Team redTeam) {
         this.blueTeam = blueTeam;
         this.redTeam = redTeam;
@@ -41,28 +42,7 @@ public class PresentationController {
         presentationStarted = true;
 
         System.out.println("Presentation starting");
-
-        System.out.println(urls);
-
         presentationImageView.setImage(new Image(blueTeam.getTeam().get(0).getUrl()));
-        //presentationImageView.setImage(new Image(urls.get(0)));
-
-
-//        urls = new ArrayList<>();
-//        for (Player p : blueTeam.getTeam()){
-//            urls.add(p.getUrl());
-//        }
-//        for (Player p : redTeam.getTeam()){
-//            urls.add(p.getUrl());
-//        }
-//        System.out.println(urls);
-
-    }
-
-    @FXML
-    private void startPresentation(MouseEvent event) {
-
-
 
     }
 

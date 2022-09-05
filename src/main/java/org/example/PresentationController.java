@@ -1,5 +1,6 @@
 package org.example;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -41,9 +42,27 @@ public class PresentationController {
         presentationStarted = true;
 
         System.out.println("Presentation starting");
-        presentationImageView.setImage(new Image(blueTeam.getTeam().get(0).getUrl()));
-        presentationPlayerLabel.setText(blueTeam.getTeam().get(0).getName());
 
+        Thread presentationThread = new Thread(new PresentationThread());
+        presentationThread.start();
+
+    }
+
+    class PresentationThread implements Runnable {
+        @Override
+        public void run() {
+
+            Platform.runLater(() -> {
+                try {
+                    Thread.sleep(5000);
+                    presentationImageView.setImage(new Image(blueTeam.getTeam().get(0).getUrl()));
+                    presentationPlayerLabel.setText(blueTeam.getTeam().get(0).getName());
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+
+        }
     }
 
 }

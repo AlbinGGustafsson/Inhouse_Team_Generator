@@ -34,6 +34,20 @@ public class PresentationController {
         this.blueTeam = blueTeam;
         this.redTeam = redTeam;
 
+        if (presentationStarted) {
+            System.out.println("Presentation in progress");
+            return;
+        }
+        presentationStarted = true;
+
+        System.out.println("Presentation starting");
+
+        System.out.println(urls);
+
+        presentationImageView.setImage(new Image(blueTeam.getTeam().get(0).getUrl()));
+        //presentationImageView.setImage(new Image(urls.get(0)));
+
+
 //        urls = new ArrayList<>();
 //        for (Player p : blueTeam.getTeam()){
 //            urls.add(p.getUrl());
@@ -48,18 +62,7 @@ public class PresentationController {
     @FXML
     private void startPresentation(MouseEvent event) {
 
-        if (presentationStarted) {
-            System.out.println("Presentation in progress");
-            return;
-        }
-        presentationStarted = true;
 
-        System.out.println("Presentation starting");
-
-        System.out.println(urls);
-
-        presentationImageView.setImage(new Image(blueTeam.getTeam().get(0).getUrl()));
-        //presentationImageView.setImage(new Image(urls.get(0)));
 
     }
 

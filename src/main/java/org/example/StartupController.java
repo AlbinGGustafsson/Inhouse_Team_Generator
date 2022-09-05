@@ -2,6 +2,7 @@ package org.example;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
@@ -53,7 +54,10 @@ public class StartupController {
         alert.showAndWait();
 
 
-        PresentationController presentationController = new PresentationController();
+//        PresentationController presentationController = new PresentationController();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("presentation.fxml"));
+        loader.load();
+        PresentationController presentationController = loader.getController();
         presentationController.sendTeamsForPresentation(blueTeam, redTeam);
 
 

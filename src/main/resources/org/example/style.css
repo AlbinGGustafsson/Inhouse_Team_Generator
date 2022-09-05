@@ -17,6 +17,9 @@
 
 #presentationPane{
     -fx-font-family: "Friz Quadrata";
+    /*-fx-background-image: url("images/ui.png");*/
+    /*-fx-background-repeat: stretch;*/
+    /*-fx-background-size: cover;*/
 }
 
 .label{

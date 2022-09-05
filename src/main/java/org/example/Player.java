@@ -48,4 +48,16 @@ public class Player {
         //return String.format("Name: %s Skill: %d", name, skill);
     }
 
+    @Override
+    public boolean equals(Object o){
+        if (o instanceof Player p){
+            return this.name == p.getName();
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
 }

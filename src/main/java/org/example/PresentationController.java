@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class PresentationController {
 
-    private static Team blueTeam;
-    private static Team redTeam;
+    private Team blueTeam;
+    private Team redTeam;
 
     private static ArrayList<String> urls;
 
@@ -60,7 +60,7 @@ public class PresentationController {
                 }
                 int finalI1 = i;
                 Platform.runLater(() -> {
-                    presentationTeamLabel.setText("Blue team");
+                    presentationTeamLabel.setText("Blue team player " + (finalI1 + 1));
                     presentationImageView.setImage(new Image(blueTeam.getTeam().get(finalI1).getUrl()));
                     presentationPlayerLabel.setText(blueTeam.getTeam().get(finalI1).getName());
                 });
@@ -71,7 +71,7 @@ public class PresentationController {
                 }
                 int finalI = i;
                 Platform.runLater(() -> {
-                    presentationTeamLabel.setText("Red team");
+                    presentationTeamLabel.setText("Red team player " + (finalI + 1));
                     presentationImageView.setImage(new Image(redTeam.getTeam().get(finalI).getUrl()));
                     presentationPlayerLabel.setText(redTeam.getTeam().get(finalI).getName());
                 });

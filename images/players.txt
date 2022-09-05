@@ -1,0 +1,16 @@
+Albin:1:images/Player1.png
+Erik:2:images/Player2.png
+Hampus:3:images/Player3.png
+Maackz:2:images/Player4.png
+Magge:1:images/Player5.png
+Elliot:2:images/Player6.png
+Konrad:3:images/Player7.png
+Smide:3:images/Player8.png
+Jonas:0:images/Player9.png
+Isak:1:images/Player10.png
+Aksel:3:url
+Ludwig:2:url
+Martin:1:url
+Daniel:1:url
+Cally:2:url
+Adam:1:url

@@ -1,0 +1,32 @@
+@font-face {
+    font-family: Friz Quadrata;
+    src: url('lolfont.otf');
+}
+
+#title{
+    -fx-font-family: "Friz Quadrata";
+    -fx-text-fill: Orange;
+}
+
+#startupPane{
+    -fx-font-family: "Friz Quadrata";
+    -fx-background-image: url("images/ui.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+}
+
+#presentationPane{
+    -fx-font-family: "Friz Quadrata";
+}
+
+.label{
+    -fx-font-family: "Friz Quadrata";
+    -fx-text-fill: Black;
+}
+
+.root{
+    /*-fx-background-image: url("images/ui.png");*/
+    /*-fx-background-repeat: stretch;*/
+    /*-fx-background-size: cover;*/
+}
+

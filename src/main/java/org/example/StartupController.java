@@ -9,10 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.util.Pair;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class StartupController {
@@ -99,6 +97,9 @@ public class StartupController {
 
     @FXML
     void loadPlayers(ActionEvent event) {
+        TextToSpeech textToSpeech = new TextToSpeech();
+        textToSpeech.test();
+
         loadPlayers();
     }
 

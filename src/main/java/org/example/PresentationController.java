@@ -56,6 +56,7 @@ public class PresentationController {
     class PresentationThread implements Runnable {
         @Override
         public void run() {
+
             String musicFile = "images/test.mp3";
             Media sound = new Media(new File(musicFile).toURI().toString());
             MediaPlayer mediaPlayer = new MediaPlayer(sound);

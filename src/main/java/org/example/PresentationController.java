@@ -57,6 +57,7 @@ public class PresentationController {
         @Override
         public void run() {
 
+            //mp3 lek
             String musicFile = "images/test.mp3";
             Media sound = new Media(new File(musicFile).toURI().toString());
             MediaPlayer mediaPlayer = new MediaPlayer(sound);

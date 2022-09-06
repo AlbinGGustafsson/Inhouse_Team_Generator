@@ -97,6 +97,7 @@ public class StartupController {
 
     @FXML
     void loadPlayers(ActionEvent event) {
+        //tts lek
         TextToSpeech textToSpeech = new TextToSpeech();
         textToSpeech.test();
 

@@ -6,8 +6,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class PresentationController {
@@ -44,6 +47,7 @@ public class PresentationController {
 
         System.out.println("Presentation starting");
 
+
         Thread presentationThread = new Thread(new PresentationThread());
         presentationThread.start();
 
@@ -52,6 +56,11 @@ public class PresentationController {
     class PresentationThread implements Runnable {
         @Override
         public void run() {
+            String musicFile = "images/test.mp3";
+            Media sound = new Media(new File(musicFile).toURI().toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.play();
+
 
             for (int i = 0; i < 5; i++) {
                 try {

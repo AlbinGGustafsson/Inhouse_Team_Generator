@@ -18,16 +18,19 @@ import java.net.URISyntaxException;
 public class App extends Application {
 
     private static Scene scene;
-    public static Stage stage;
-
     @Override
     public void start(Stage stage) throws IOException {
-
-        this.stage = stage;
-        scene = new Scene(loadFXML("startup"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("startup.fxml"));
+        Parent root = loader.load();
+        scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
+
+//        scene = new Scene(loadFXML("startup"));
+//        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+//        stage.setScene(scene);
+//        stage.show();
     }
 
     static void setRoot(String fxml) throws IOException {

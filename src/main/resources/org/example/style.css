@@ -5,7 +5,6 @@
 
 #title{
     -fx-font-family: "Friz Quadrata";
-    -fx-text-fill: Orange;
 }
 
 #startupPane{
@@ -24,7 +23,7 @@
 
 .label{
     -fx-font-family: "Friz Quadrata";
-    -fx-text-fill: Black;
+    -fx-text-fill: Orange;
 }
 
 .root{

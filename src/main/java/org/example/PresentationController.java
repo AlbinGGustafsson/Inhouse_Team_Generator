@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
@@ -61,6 +62,7 @@ public class PresentationController {
                 int finalI1 = i;
                 Platform.runLater(() -> {
                     presentationTeamLabel.setText("Blue team player " + (finalI1 + 1));
+                    presentationTeamLabel.setTextFill(Color.BLUE);
                     presentationImageView.setImage(new Image(blueTeam.getTeam().get(finalI1).getUrl()));
                     presentationPlayerLabel.setText(blueTeam.getTeam().get(finalI1).getName());
                 });
@@ -72,6 +74,7 @@ public class PresentationController {
                 int finalI = i;
                 Platform.runLater(() -> {
                     presentationTeamLabel.setText("Red team player " + (finalI + 1));
+                    presentationTeamLabel.setTextFill(Color.RED);
                     presentationImageView.setImage(new Image(redTeam.getTeam().get(finalI).getUrl()));
                     presentationPlayerLabel.setText(redTeam.getTeam().get(finalI).getName());
                 });

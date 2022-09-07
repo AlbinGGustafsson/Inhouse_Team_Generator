@@ -59,7 +59,9 @@ public class PresentationController {
 
             //mp3 lek
             String musicFile = "images/test.mp3";
-            Media sound = new Media(new File(musicFile).toURI().toString());
+            String file = new File(musicFile).toURI().toString();
+            System.out.println(file);
+            Media sound = new Media(file);
             MediaPlayer mediaPlayer = new MediaPlayer(sound);
             mediaPlayer.play();
 
